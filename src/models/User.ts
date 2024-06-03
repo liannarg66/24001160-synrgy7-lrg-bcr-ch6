@@ -1,7 +1,8 @@
 import { Model } from 'objection';
 
 export class User extends Model {
-  //id!: number;
+  id!: number;
+  email!: string;
   username!: string;
   password!: string;
   role!: string;
@@ -16,6 +17,7 @@ export class User extends Model {
       required: ['username', 'password', 'role'],
       properties: {
         //id: { type: 'integer' },
+        email: { type: 'string' },
         username: { type: 'string' },
         password: { type: 'string' },
         role: { type: 'string', enum: ['superadmin', 'admin', 'member'] }
